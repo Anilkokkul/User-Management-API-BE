@@ -67,6 +67,8 @@ exports.verifyOtp = async (req, res) => {
     user
       .save()
       .then(() => {
+        const content = `Hi, ${user.name}, Thank you for choosing us. Your account the active now you can login using your email ID`;
+        sendEmail(user.email, "Congratulations!!! Account verified", content);
         res.status(200).json({ message: "User verified successfully" });
       })
       .catch((err) => {
