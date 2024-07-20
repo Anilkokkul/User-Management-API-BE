@@ -11,13 +11,22 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
-    hashedPassword: {
+    mobileNumber: {
       type: String,
-      required: true,
     },
-    role: {
+    gender: String,
+    address: String,
+    state: String,
+    country: String,
+    otp: {
       type: String,
-      enum: ["user", "admin"],
+    },
+    otpExpire: {
+      type: Date,
+    },
+    isVerified: {
+      type: Boolean,
+      default: false,
     },
   },
   {
