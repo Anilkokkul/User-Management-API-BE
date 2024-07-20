@@ -19,7 +19,7 @@ const port = process.env.PORT || 8000;
 app.use(userRoutes);
 
 app.get("/", (req, res) => {
-  res.send(`<h1>Welcome to the API</h1>`);
+  res.send(`<h1>Welcome to the User Management API</h1>`);
 });
 
 app.listen(port, () => {
